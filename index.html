@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="heb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חישוב חפש"ש</title>
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body dir="rtl">
+
+    <br> <header>מחשבון חפש"שים</header> <br>
+       
+    <form id="form">
+        <label for="yearlyHolidays">חופשה שנתית</label>
+        <input id="yearlyHolidays" type="number" min="0" value="0"><br> 
+
+        <label for="cheifDays">ימי מפקד</label>
+        <input id="cheifDays" type="number" min="0" value="0"><br>  
+
+        <label for="accumulationHolidays">חופשה צבורה</label>
+        <input id="accumulationHolidays" type="number" min="0" value="0"><br>
+
+        <label for="soldierType">סוג שירות</label>
+        <select name="soldierType" id="soldierType">
+            <option value="warrior">לוחם</option>
+            <option value="soldier">חייל</option>
+        </select><br>
+        
+        <label for="endServiceDate">תת"ש (תאריך תום שירות)</label>
+        <input id="endServiceDate" type="date" format-text="dd/mm/yyyy"><br>
+
+        <button id="sendBtn" type="button">חשב!</button>
+    </form>
+
+    <br> <p id="messageToUser"></p>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
