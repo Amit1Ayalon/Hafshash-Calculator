@@ -64,6 +64,20 @@ function takeDaysDownUntilDate(date, holidays){
     return date;
 }
 
+function toggleDarkMode(){
+    document.body.classList.toggle("dark");
+    
+    if(document.body.classList.contains("dark")){
+        document.getElementById("sun").style.display = "inline-block";
+        document.getElementById("moon").style.display = "none";
+
+    } else{
+        document.getElementById("sun").style.display = "none";
+        document.getElementById("moon").style.display = "inline-block";
+    }
+}
+
 
 const sendBtn = document.getElementById("sendBtn");
 sendBtn.addEventListener("click", calculateHafshash);
+

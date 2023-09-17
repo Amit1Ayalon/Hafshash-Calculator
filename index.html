@@ -10,14 +10,20 @@
 </head>
 
 <body dir="rtl" class="dark">
-    
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <div class="icons-row">
         <img src="./גדוד 50 ללא רקע.png" alt="">
         <img src="./חטיבה 933 נחל ללא רקע.png" alt="">     
     </div>
+
+    <button id="darkModeToggle" onclick="toggleDarkMode()">
+        <ion-icon id="moon" name="moon" style="display: none;"></ion-icon>
+        <ion-icon id="sun" name="sunny"></ion-icon>
+    </button>
     
     
-    <br> <header>מחשבון חפש"שים</header> <br>
+    <header>מחשבון חפש"שים</header> <br>
        
     <form id="form">
         <label for="yearlyHolidays">חופשה שנתית</label>
