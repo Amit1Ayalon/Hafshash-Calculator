@@ -66,18 +66,35 @@ function takeDaysDownUntilDate(date, holidays){
 
 function toggleDarkMode(){
     document.body.classList.toggle("dark");
-    
+
     if(document.body.classList.contains("dark")){
         document.getElementById("sun").style.display = "inline-block";
         document.getElementById("moon").style.display = "none";
 
+        document.getElementById("helpBtn").style.color = "#e6e6e6";
+
     } else{
         document.getElementById("sun").style.display = "none";
         document.getElementById("moon").style.display = "inline-block";
+
+        document.getElementById("helpBtn").style.color = "#222";
     }
 }
 
+function toggleVisibilty(evt){
+    evt.currentTarget.idToPass.forEach(id => {
+        document.getElementById(id).classList.toggle("not-visible");    
+    });
+    
+}
+
+
+const calculateSingleBtn = document.getElementById("calculate-single-btn");
+const singleCalculatorForm = document.getElementById("single-soldier-calculator");
+const mainMenu = document.getElementById("main-menu");
+
+calculateSingleBtn.addEventListener("click", toggleVisibilty);
+calculateSingleBtn.idToPass = [singleCalculatorForm.id, mainMenu.id];
 
 const sendBtn = document.getElementById("sendBtn");
 sendBtn.addEventListener("click", calculateHafshash);
-

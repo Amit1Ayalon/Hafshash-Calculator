@@ -7,25 +7,39 @@
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
     <link rel = "icon" href = "./גדוד 50 ללא רקע.png" type = "image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
 </head>
 
 <body dir="rtl" class="dark">
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
-    <div class="icons-row">
+    <div class="official-icons-row">
         <img src="./גדוד 50 ללא רקע.png" alt="">
         <img src="./חטיבה 933 נחל ללא רקע.png" alt="">     
     </div>
 
-    <button id="darkModeToggle" onclick="toggleDarkMode()">
-        <ion-icon id="moon" name="moon" style="display: none;"></ion-icon>
-        <ion-icon id="sun" name="sunny"></ion-icon>
-    </button>
-    
+    <div class="interactable-icons-row">
+        <button id="darkModeToggle" onclick="toggleDarkMode()">
+            <ion-icon id="moon" name="moon" style="display: none;"></ion-icon>
+            <ion-icon id="sun" name="sunny"></ion-icon>
+        </button>
+        
+        <button  id="helpBtn" style="color: #e6e6e6;">
+            <ion-icon name="help-circle"></ion-icon>
+        </button>
+    </div>
     
     <header>מחשבון חפש"שים</header> <br>
        
-    <form id="form">
+    <form id="main-menu">
+        <button class="nav-button" id="calculate-single-btn" type="button">חישוב לחייל אחד</button>
+        <button class="nav-button" type="button">חישוב קבוצת חיילים (מתוך קובץ אקסל)</button>
+    </form>
+
+    <form id="single-soldier-calculator" class="not-visible">
+        <button>חזרה לתפריט ראשי</button>
+
         <label for="yearlyHolidays">חופשה שנתית</label>
         <input id="yearlyHolidays" type="number" min="0" value="0"><br> 
 
@@ -44,10 +58,14 @@
         <label for="endServiceDate">תת"ש (תאריך תום שירות)</label>
         <input id="endServiceDate" type="date" format-text="dd/mm/yyyy"><br>
 
-        <button id="sendBtn" type="button">חשב!</button>
+        <button class="nav-button" id="sendBtn" type="button">חשב!</button>
+        
+        <p id="messageToUser">לחייל יש....... <br>
+            יציאה לחפשש בתאריך..... <br>
+            תאריך שחרור כפי שהוזן.....
+        </p> <br>
     </form>
 
-    <br> <p id="messageToUser"></p>
     
 
     <script src="app.js"></script>
